@@ -3,13 +3,8 @@
 #include <time.h>
 /**
  * main - Generates random valid passwords for the program 101-crackme.
- *
- * description: finds checksum value from objdump
- *
  * Return: 0
  */
-
-
 int main(void)
 {
 	int counter, sum, random;
