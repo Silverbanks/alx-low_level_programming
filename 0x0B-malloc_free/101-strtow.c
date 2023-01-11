@@ -9,6 +9,7 @@
  * Return: int.
  */
 int _strcmp(char *s1, char *s2)
+
 {
 	int i = 0;
 
@@ -31,6 +32,7 @@ int _strcmp(char *s1, char *s2)
   * Return: The lenght, integer.
   */
 int _strlen(char *s, int i)
+
 {
 	int count = 0;
 
@@ -49,6 +51,7 @@ int _strlen(char *s, int i)
  * Return: Number of words.
  */
 int words(char *str)
+
 {
 	int count = 0, flag = 0;
 
@@ -76,6 +79,7 @@ int words(char *str)
  * Return: The array whit the elements.
  */
 char *_strcpy(char *s, int i, char *tmp)
+
 {
 	int j;
 
@@ -90,14 +94,17 @@ char *_strcpy(char *s, int i, char *tmp)
 
 /**
  * strtow - Extract all the words from an string.
+ *
  * @str: String.
  *
  * Return: Array of words.
  */
 char **strtow(char *str)
+
 {
 
 	int i = 0, j = 0, pos, t;
+
 	char **tmp;
 
 	if (str == NULL || _strcmp(str, "") || (words(str) == 0))
@@ -133,6 +140,7 @@ char **strtow(char *str)
 			i++;
 		}
 	}
+
 	tmp[j] = NULL;
 	return (tmp);
 }
