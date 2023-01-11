@@ -1,8 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-
-int word_count(char *str);
-char *first_word(char *str);
+#include <stdlib.h>
 
 /**
  * _strcmp - Like strcmp.
