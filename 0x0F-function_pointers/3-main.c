@@ -1,19 +1,19 @@
 #include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <string.h>
-
 /**
- * main - Prints the result of simple operations.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
- *
+ * main - check the code for Holberton School students.
+ * @argv: value arguments
+ * @argc: count arguments
  * Return: Always 0.
  */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int num1, num2;
-	char *op;
+	int n1 = 0;
+	int n2 = 0;
+	int r = 0;
 
 	if (argc != 4)
 	{
@@ -21,24 +21,15 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	num1 = atoi(argv[1]);
-	op = argv[2];
-	num2 = atoi(argv[3]);
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[3]);
 
-	if (get_op_func(op) == NULL || op[1] != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
-	if ((*op == '/' && num2 == 0) ||
-	    (*op == '%' && num2 == 0))
+	if (n2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-
-	printf("%d\n", get_op_func(op)(num1, num2));
-
+	r = (*get_op_func(argv[2]))(n1, n2);
+	printf("%d\n", r);
 	return (0);
 }

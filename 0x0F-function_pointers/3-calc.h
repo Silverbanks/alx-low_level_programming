@@ -1,5 +1,5 @@
-#ifndef CALC_H
-#define CALC_H
+#ifndef CALC
+#define CALC
 /**
  * struct op - A struct op.
  * @op: The operator.

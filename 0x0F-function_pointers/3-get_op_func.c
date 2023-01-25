@@ -1,26 +1,29 @@
 #include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 /**
- * get_op_func - a function to perform the operation asked by the user.
- * @s: operator
- * Return: pointer to corresponding operator.
- */
-
+ * get_op_func - function that evaluate a operator
+ * @s: sring
+ * Return: pointer to function
+*/
 int (*get_op_func(char *s))(int, int)
 {
-	int (*ptr_fun)(int, int);
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}};
+	int i = 0;
 
-	ptr_fun = *s == '+' ? op_add :
-		*s == '-' ? op_sub :
-		s == '' ? op_mul :
-		*s == '/' ? op_div :
-		*s == '%' ? op_mod : NULL;
-	if (!ptr_fun)
+	while (i < 5)
 	{
-		printf("Error\n");
-		exit(99);
+		if (strcmp(s, ops[i].op) == 0)
+			return (ops[i].f);
+		i++;
 	}
-	return (ptr_fun);
+	printf("Error\n");
+	exit(99);
 }
